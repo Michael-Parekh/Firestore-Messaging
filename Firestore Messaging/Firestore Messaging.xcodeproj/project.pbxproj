@@ -13,6 +13,8 @@
 		73ACA90529E756F600735D71 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73ACA90429E756F600735D71 /* Preview Assets.xcassets */; };
 		73ACA90D29E75BA700735D71 /* TitleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ACA90C29E75BA700735D71 /* TitleRow.swift */; };
 		73ACA91029E76E1200735D71 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ACA90F29E76E1200735D71 /* Message.swift */; };
+		73ACA91229E770E000735D71 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ACA91129E770E000735D71 /* MessageBubble.swift */; };
+		73ACA91429E7C24900735D71 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ACA91329E7C24900735D71 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		73ACA90429E756F600735D71 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		73ACA90C29E75BA700735D71 /* TitleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleRow.swift; sourceTree = "<group>"; };
 		73ACA90F29E76E1200735D71 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		73ACA91129E770E000735D71 /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
+		73ACA91329E7C24900735D71 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 				73ACA90B29E75B7D00735D71 /* Components */,
 				73ACA90129E756F600735D71 /* Assets.xcassets */,
 				73ACA90329E756F600735D71 /* Preview Content */,
+				73ACA91329E7C24900735D71 /* Extensions.swift */,
 			);
 			path = "Firestore Messaging";
 			sourceTree = "<group>";
@@ -77,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				73ACA90C29E75BA700735D71 /* TitleRow.swift */,
+				73ACA91129E770E000735D71 /* MessageBubble.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -160,7 +166,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				73ACA90029E756F600735D71 /* ContentView.swift in Sources */,
+				73ACA91429E7C24900735D71 /* Extensions.swift in Sources */,
 				73ACA91029E76E1200735D71 /* Message.swift in Sources */,
+				73ACA91229E770E000735D71 /* MessageBubble.swift in Sources */,
 				73ACA8FE29E756F600735D71 /* Firestore_MessagingApp.swift in Sources */,
 				73ACA90D29E75BA700735D71 /* TitleRow.swift in Sources */,
 			);
