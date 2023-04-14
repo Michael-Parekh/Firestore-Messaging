@@ -13,6 +13,7 @@ import FirebaseFirestoreSwift
 class MessagesManager: ObservableObject {
     // Make 'messages' a 'Published' value so that 'ContentView' redraws whenever new messages are created.
     @Published private(set) var messages: [Message] = []
+    @Published private(set) var lastMessageId = ""
     
     // Create an instance of our Firestore database.
     let db = Firestore.firestore()
@@ -45,6 +46,11 @@ class MessagesManager: ObservableObject {
             
             // Sort the messages by timestamp (oldest => newest). 
             self.messages.sort { $0.timestamp < $1.timestamp }
+            
+            // Unwrap the optional and get the ID of the last message so that we can automatically scroll to it in 'ContentView'.
+            if let id = self.messages.last?.id {
+                self.lastMessageId = id
+            }
         }
     }
     
