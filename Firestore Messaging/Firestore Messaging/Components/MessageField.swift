@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MessageField: View {
+    // The 'MessagesManager' is passed in as an environment object from 'ContentView' (so that we do not create another instance of it). 
+    @EnvironmentObject var messagesManager: MessagesManager
     // String that changes when the user inputs into the 'MessageField'.
     @State private var message = ""
     
@@ -16,7 +18,7 @@ struct MessageField: View {
             CustomTextField(placeholder: Text("Enter your message here"), text: $message)
             
             Button {
-                print("Message sent")
+                messagesManager.sendMessage(text: message)
                 // Reset the 'message' state to an empty string once it has been sent.
                 message = ""
             } label: {
@@ -38,6 +40,7 @@ struct MessageField: View {
 struct MessageField_Previews: PreviewProvider {
     static var previews: some View {
         MessageField()
+            .environmentObject(MessagesManager())
     }
 }
 

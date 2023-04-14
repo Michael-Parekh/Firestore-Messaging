@@ -47,4 +47,15 @@ class MessagesManager: ObservableObject {
             self.messages.sort { $0.timestamp < $1.timestamp }
         }
     }
+    
+    // Add a message document in Firestore based on the 'text' argument.
+    func sendMessage(text: String) {
+        do {
+            let newMessage = Message(id: "\(UUID())", text: text, received: false, timestamp: Date())
+            // Create a new document in Firestore with 'newMessage' and use 'setData(from:)' to convert the 'Message' into Firestore data (note that 'setData(from:)' is only available in the 'FirebaseFirestoreSwift' package).
+            try db.collection("messages").document().setData(from: newMessage)
+        } catch {
+            print("Error adding message to Firestore: \(error)")
+        }
+    }
 }
