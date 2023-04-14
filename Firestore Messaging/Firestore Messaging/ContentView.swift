@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    // Temporary dummy data.
-    var messageArray = ["Hey, what's up?", "Nothing much. How are you doing?", "Great! School has been busy but I am almost ready to graduate."]
+    // Utilize a 'StateObject' so that this view updates whenever new messages are created.
+    @StateObject var messagesManager = MessagesManager()
     
     var body: some View {
         VStack {
@@ -17,11 +17,11 @@ struct ContentView: View {
                 TitleRow()
                 
                 ScrollView {
-                    ForEach(messageArray, id: \.self) { text in
-                        MessageBubble(message: Message(id: "12345", text: text, received: true, timestamp: Date()))
+                    ForEach(messagesManager.messages, id: \.id) { message in
+                        MessageBubble(message: message)
                     }
                 }
-                .padding()
+                .padding(.top, 10)
                 .background(.white)
                 // Use our custom 'cornerRadius' extension.
                 .cornerRadius(30, corners: [.topLeft, .topRight])
